@@ -1,37 +1,33 @@
-//Переделать
+'use strict';
 
-
-
-
-const taba = 6;
 const sharm = 15;
 const hurgada = 25;
+const taba = 6;
 
+let ask = prompt('Введите необходимое колличество мест');
 
-const requirePlaces = prompt('Введите колличество мест:');
-
-if(Number.isInteger(+requirePlaces)  && +requirePlaces) {
-    if(requirePlaces <= sharm) {
-        if(+requirePlaces <= taba) {
-            if(confirm('Хотите ли вы остаться в Таба')) {
-                alert('Добро пожаловать в Табу')
-            } else {
-                alert('Нам очень жаль, приходите еще');
-                }
-        } else if(confirm('Хотите ли вы остаться в Шарм')) {
-            alert('Добро пожаловать в Шарм')
-            } else {
-            alert('Нам очень жаль, приходите еще');
-            }
-        } else if(+requirePlaces <= hurgada) 
-        if(confirm('Хотите ли вы остаться в Хургаде')) {
-            alert('Добро пожаловать в Хургаду')
-        } else {
-            alert('Нам очень жаль, приходите еще');
-            }
-        } 
- else if (!requirePlaces) {
-    alert('Нам очень жаль, приходите еще!');
-} else {
-    alert('Извините, столько мест нет ни в одной группе')
+if(Number.isInteger(Number(ask)) && ask > 0) {
+    let city;
+    let agree;
+    if(ask <= taba) {
+        city = 'Таба';
+        agree = confirm(`Есть место в группе Таба! Вы согласны?`);
+    } else if( ask <= sharm) {
+        city = 'Шарм';
+        agree = confirm(`Есть место в группе Шарм! Вы согласны?`);
+    } else if(ask <= hurgada) {
+        city = 'Хургада';
+        agree = confirm(`Есть место в группе Хургада! Вы согласны?`);
+    } else {
+        alert('Извините, столько мест нет ни в одной группе!');
+    }
+    if(agree) {
+        alert(`Приятного путешествия в группе ${city}`);
+    } else {
+        alert('Нам очень жаль, приходите еще');
+    }
+} else if(ask !== null) {
+    alert('Ошибка ввода');
+}else {
+    alert('Нам очень жаль, приходите еще');
 }
