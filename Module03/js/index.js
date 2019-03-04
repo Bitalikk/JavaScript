@@ -95,30 +95,30 @@
 
 
 
-const map = (arr, callback) => { // обьявляем функцию с аргументами arr(массивом), callback(функцией)
-  const resultArr = []; // обьявляем пустой массив, в который будет записывать новые эл-ты
+// const map = (arr, callback) => { // обьявляем функцию с аргументами arr(массивом), callback(функцией)
+//   const resultArr = []; // обьявляем пустой массив, в который будет записывать новые эл-ты
   
-  // перебираем, входящий при вызове функции массив, записанный в аргумент arr. 
-  // в теле цикла елементы пропускаем через функцию callback, обьявленную в аргументах
-  // и записываем результат callback-функции в переменную result.
-  // поседним этапом цикла - записываем result в новый массив, выходим из массива.
-  // последним этапом функции map будет возврат(return) переменной resultArr.
-  for(const element of arr) {
-    const result = callback(element);
-    resultArr.push(result);
-  }
-  return resultArr;
-};
+//   // перебираем, входящий при вызове функции массив, записанный в аргумент arr. 
+//   // в теле цикла елементы пропускаем через функцию callback, обьявленную в аргументах
+//   // и записываем результат callback-функции в переменную result.
+//   // поседним этапом цикла - записываем result в новый массив, выходим из массива.
+//   // последним этапом функции map будет возврат(return) переменной resultArr.
+//   for(const element of arr) {
+//     const result = callback(element);
+//     resultArr.push(result);
+//   }
+//   return resultArr;
+// };
 
-const double = val => val * 2;
-const triple = val => val * 3;
-const numbers = [1, 2, 3, 4, 5];
+// const double = val => val * 2;
+// const triple = val => val * 3;
+// const numbers = [1, 2, 3, 4, 5];
 
-const doubledNumbers = map(numbers, double);
-console.log(doubledNumbers); // [2, 4, 6, 8, 10]
+// const doubledNumbers = map(numbers, double);
+// console.log(doubledNumbers); // [2, 4, 6, 8, 10]
 
-const tripledNumbers = map(numbers, triple);
-console.log(tripledNumbers); // [3, 6, 9, 12, 15]
+// const tripledNumbers = map(numbers, triple);
+// console.log(tripledNumbers); // [3, 6, 9, 12, 15]
 
 
 
@@ -176,3 +176,23 @@ console.log(tripledNumbers); // [3, 6, 9, 12, 15]
 
 
 
+//===================================
+
+// РЕКУРСИЯ
+
+const mass = [1, [2, 3, [4, [5]], 6], [7, [8, [9]]], 10];
+
+const newMass = function self (arr) {
+  let newArr = [];
+  
+  for(let el of arr) {
+    const isArr = Array.isArray(el);
+    if(isArr) {
+      newArr = newArr.concat(self(el));
+    } else {
+      newArr.push(el);
+    }
+  }
+  return newArr;
+};
+console.log(newMass(mass));

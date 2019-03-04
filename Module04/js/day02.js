@@ -33,35 +33,43 @@
 
 
 
-const numbers = [1, 2, 3, 4, 5]; //not our mass
+// const numbers = [1, 2, 3, 4, 5]; //not our mass
 
-// const ourArray =(transfer,numbersClone) => {//new mass
-//   let newMass = []; //future mass
-//   for (const numbersCloneElement of numbersClone) { //iteration of new mass
-//     const newElement = transfer(numbersCloneElement); // rewrite transfer element
-//     newMass.push(newElement); // rewrite new mass
-//   }
-//   return newMass; // return parametrs in numbersclone
-// };
+// // const ourArray =(transfer,numbersClone) => {//new mass
+// //   let newMass = []; //future mass
+// //   for (const numbersCloneElement of numbersClone) { //iteration of new mass
+// //     const newElement = transfer(numbersCloneElement); // rewrite transfer element
+// //     newMass.push(newElement); // rewrite new mass
+// //   }
+// //   return newMass; // return parametrs in numbersclone
+// // };
 
-const double = (number) => number *2; // our function
+// const double = (number) => number *2; // our function
 
-const triple = (number) => number *3;
-// const triple = function (number) {     //our function
-//   return number * 3;
-// };
-// const doubledNumbers = ourArray(double, numbers); // we need results
-// console.log(doubledNumbers); // [2, 4, 6, 8, 10]
-// const tripledNumbers = ourArray(triple,numbers);
-// console.log(tripledNumbers); // [3, 6, 9, 12, 15]
+// const triple = (number) => number *3;
+// // const triple = function (number) {     //our function
+// //   return number * 3;
+// // };
+// // const doubledNumbers = ourArray(double, numbers); // we need results
+// // console.log(doubledNumbers); // [2, 4, 6, 8, 10]
+// // const tripledNumbers = ourArray(triple,numbers);
+// // console.log(tripledNumbers); // [3, 6, 9, 12, 15]
 
-const newMass = [];
-numbers.map(function(el){ return newMass.push(el*2) });
-newMass2 = [];
-numbers.map(function(el){
-  return newMass2.push(triple(el));
-});
+// const newMass = [];
+// numbers.map(function(el){ return newMass.push(el*2) });
+// newMass2 = [];
+// numbers.map(function(el){
+//   return newMass2.push(triple(el));
+// });
 
-console.log(numbers);
-console.log(newMass);
-console.log(newMass2);
+// console.log(numbers);
+// console.log(newMass);
+// console.log(newMass2);
+
+
+
+//======================================================================
+
+
+
+
