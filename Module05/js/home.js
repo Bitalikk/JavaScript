@@ -154,7 +154,7 @@ console.log(getUsersByFriend(users, 'Goldie Gentry')); // [ 'Elma Head', 'Sheree
 * Получить массив всех скиллов всех пользователей (поле skills), при этом не должно быть
 * повторяющихся скиллов и они должны быть отсортированы в алфавитном порядке
 */
-const getAllUniqueSkills = arr =>  {return [...new (arr.reduce((acc, el) => el.skills ? acc.concat(el.skills) : acc, []).sort())];};
+const getAllUniqueSkills = arr =>  {return [...new Set(arr.reduce((acc, el) => el.skills ? acc.concat(el.skills) : acc, []).sort())];};
 console.log(getAllUniqueSkills(users));
 // [ 'adipisicing', 'amet', 'anim', 'commodo', 'culpa', 'elit', 'ex', 'ipsum', 'irure', 'laborum', 'lorem', 'mollit', 'non', 'nostrud', 'nulla', 'proident', 'tempor', 'velit', 'veniam' ]
                            
