@@ -110,7 +110,7 @@ console.log(getUsersByEyeColor(users, 'blue')); // [объект Moore Hensley, 
 /**
  * Получить массив имен пользователей по полу (поле gender)
  */
-const getUsersByGender = (arr, gender) => arr.filter(el => el.gender === gender);
+const getUsersByGender = (arr, gender) => arr.filter(el => el.gender !== gender);
 console.log(getUsersByGender(users, 'male')); // [ 'Moore Hensley', 'Ross Vazquez', 'Carey Barr', 'Blackburn Dotson' ]
 
 /**
@@ -122,7 +122,7 @@ console.log(getInactiveUsers(users)); // [объект Moore Hensley, объек
 /**
  * Получить пользоваля (не массив) по email (поле email, он уникальный)
  */
-const getUserByEmail = (arr, email) => arr.filter(el => el.email === email).map(post => post.name);
+const getUserByEmail = (arr, email) => arr.find(el => el.email === email).name;
 console.log(getUserByEmail(users, 'shereeanthony@kog.com')); // {объект пользователя Sheree Anthony}
 console.log(getUserByEmail(users, 'elmahead@omatom.com')); // {объект пользователя Elma Head}
 
@@ -143,7 +143,7 @@ console.log(getTotalBalance(users)); // 20916
 /**
  * Массив имен всех пользователей у которых есть друг с указанным именем
  */
-const getUsersByFriend = (arr, name) => arr.filter(el => el.friends.includes(name));
+const getUsersByFriend = (arr, name) => arr.filter(el => el.friends.includes(name)).map(el => el.name);
 console.log(getUsersByFriend(users, 'Briana Decker')); // [ 'Sharlene Bush', 'Sheree Anthony' ]
 console.log(getUsersByFriend(users, 'Goldie Gentry')); // [ 'Elma Head', 'Sheree Anthony' ]
 
