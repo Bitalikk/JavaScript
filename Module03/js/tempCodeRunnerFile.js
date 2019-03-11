@@ -1,16 +1,32 @@
-const mass = [1, [2, 3, [4, [5]], 6], [7, [8, [9]]], 10];
+'use strict';
+const logins = ["Mango", "robotGoogles", "Poly", "Aj4x1sBozz", "qwerty123"];
 
-const newMass = function self (arr) {
-  let newArr = [];
-  
-  for(let el of arr) {
-    const isArr = Array.isArray(el);
-    if(isArr) {
-      newArr = newArr.concat(self(el));
-    } else {
-      newArr.push(el);
-    }
-  }
-  return newArr;
+const isLoginValid = function(login) {
+  return login.length >= 4 && login.length <= 16;
 };
-console.log(newMass(mass));
+
+const isLoginUnique = function(allLogins, login) {
+      if(allLogins.includes(login)) {
+          return false;
+      }
+      return true;
+};
+
+const addLogin = function(login) {
+  if(isLoginValid(login)) {
+      if(isLoginUnique(logins, login)){
+          logins.push(login);
+          console.log('Логин успешно добавлен');
+      } else {
+          console.log('Такой логин уже используется');
+      }
+  } else {
+      console.log('Ошибка! Логин должен быть от 4 до 16 символов');
+  }
+};
+
+// Вызовы функции для проверки
+addLogin('Ajax'); // 'Логин успешно добавлен!'
+addLogin('robotGoogles'); // 'Такой логин уже используется!'
+addLogin('Zod'); // 'Ошибка! Логин должен быть от 4 до 16 символов'
+addLogin('jqueryisextremelyfast'); // 'Ошибка! Логин должен быть от 4 до 16 символов'
