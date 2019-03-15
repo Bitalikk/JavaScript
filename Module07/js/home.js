@@ -33,38 +33,37 @@ const posts = [
       link: 'link-3.com'
     },
   ];
-  function createCard(obj) {
-    const cart = document.querySelector('body');
-    const movieCart = document.createElement('div');
-    movieCart.classList.add('movie');
-    cart.appendChild(movieCart);
-    const img = document.createElement('img');
-    img.classList.add('movie__image');
-    img.src = `${obj.img}`;
-    img.alt = 'movie image';
-    movieCart.appendChild(img);
 
-    const movieBody = document.createElement('div');
-    movieBody.classList.add('movie__body');
-    movieCart.appendChild(movieBody);
-    const title = document.createElement('h2');
-    title.classList.add('movie__title');
-    title.textContent = `${obj.title}`;
-    const description = document.createElement('p');
-    description.classList.add('movie__description');
-    description.textContent = `${obj.text}`;
-    const date = document.createElement('a');
-    date.classList.add('movie__date');
-    date.href = `${obj.link}`;
-    date.style.textDecoration = 'none';
-    date.style.color = 'green';
-    date.textContent = 'link';
-    movieBody.append(title, description, date);
+const cart = document.querySelector('body');
+const box = createCards(posts);
+cart.append(...box);
+function createCard({img, title, text, link}) {
+  const movieCart = document.createElement('div');
+  movieCart.classList.add('movie');
+  const image = document.createElement('img');
+  image.classList.add('movie__image');
+  image.src = `${img}`;
+  image.alt = 'movie image';
+  movieCart.appendChild(image);
+
+  const movieBody = document.createElement('div');
+  movieBody.classList.add('movie__body');
+  movieCart.appendChild(movieBody);
+  const chapter = document.createElement('h2');
+  chapter.classList.add('movie__title');
+  chapter.textContent = `${title}`;
+  const description = document.createElement('p');
+  description.classList.add('movie__description');
+  description.textContent = `${text}`;
+  const date = document.createElement('a');
+  date.classList.add('movie__date');
+  date.href = `${link}`;
+  date.style.textDecoration = 'none';
+  date.style.color = 'green';
+  date.textContent = 'link';
+  movieBody.append(chapter, description, date);
+  return movieCart;
 }
-const box = [];
-function createCards(arr, callback) {
-  arr.forEach(cart => {callback(cart); box.push(cart);});
+function createCards(arr) {
+  return arr.reduce((acc, el) => acc.concat(createCard(el)), []);
 }
-createCards(posts, createCard);
-
-

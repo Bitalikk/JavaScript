@@ -132,9 +132,9 @@
   Добавьте классы и атрибуты.
 */
 
-const cart = document.querySelector('.movie');
-const clone = cart.cloneNode(true);
-function createMovieCard() {
-  document.append(clone);
-}
-createMovieCard();
+// const cart = document.querySelector('.movie');
+// const clone = cart.cloneNode(true);
+// function createMovieCard() {
+//   document.append(clone);
+// }
+// createMovieCard();
