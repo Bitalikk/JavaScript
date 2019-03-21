@@ -75,11 +75,48 @@
 //Задача №7
 // Задача. При нажатии на кнопки -  одна из них блокирует инпут с помощью атрибута disabled, а другая разблокирует:
 
-const button = Array.from(document.querySelectorAll('button'));
-const block = button[0];
-const unBlock =  button[button.length - 1];
-const input = document.querySelector('#input');
-const blocked = () => input.disabled = 'disabled';
-const unBlocked = () => input.removeAttribute('disabled');
-block.addEventListener('click', blocked);
-unBlock.addEventListener('click', unBlocked);
+// const button = Array.from(document.querySelectorAll('button'));
+// const block = button[0];
+// const unBlock =  button[button.length - 1];
+// const input = document.querySelector('#input');
+// const blocked = () => input.disabled = 'disabled';
+// const unBlocked = () => input.removeAttribute('disabled');
+// block.addEventListener('click', blocked);
+// unBlock.addEventListener('click', unBlocked);
+
+
+
+// function createPreview(arr) {
+//     const gallery = document.querySelector('.js-image-gallery');
+//     const fullview = document.createElement('div');
+//     fullview.classList.add('fullview');
+//     gallery.appendChild(fullview);
+    
+//     const preview = document.createElement('ul');
+//     preview.classList.add('preview');
+
+//     arr.forEach(img => {
+//         const item = document.createElement('li');
+//         preview.appendChild(item);
+//         const image = document.createElement('img');
+//         image.setAttribute('src', img.preview);
+//         image.setAttribute('data-fullview', img.fullview);
+//         image.setAttribute('alt', img.alt);
+//         item.appendChild(image);
+//     });
+//     gallery.appendChild(preview);
+//     const list = document.querySelectorAll('li > img');
+//     const imageFullview = document.createElement('img');
+//     imageFullview.classList.add('fullview__img');
+//     imageFullview.setAttribute('src', list[0].dataset.fullview);
+//     imageFullview.setAttribute('alt', list[0].alt);
+//     fullview.appendChild(imageFullview);
+// }
+
+//  function showPhoto(event) {
+//   const target = event.target;
+//   if(target.nodeName !== 'IMG') return;
+//   const fullviewImg = document.querySelector('.fullview > img');
+//   fullviewImg.src = target.dataset.fullview;
+//   fullviewImg.alt = target.alt;
+// }
