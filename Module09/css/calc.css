@@ -1,0 +1,19 @@
+#text {
+    margin-bottom: 10px;
+    height: 30px;
+    font-size: 20px;
+  }
+  .simbol {
+    margin-bottom: 10px;
+  }
+  .top {
+    line-height: 20px;
+  }
+  .bot {
+    width: 100px;
+    height: 40px;
+    font-size: 32px;
+  }
+  .num {
+    margin-bottom: 5px;
+  }
