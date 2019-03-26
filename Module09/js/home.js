@@ -200,7 +200,6 @@ class Stopwatch {
         this.result.push(this.getFormatedTime(this.deltaTime));
         item.textContent = this.result[this.result.length - 1];
         this.list.appendChild(item);
-        console.log(this.result);
     } else if(target.textContent === 'Clear list') {
         this.parent.querySelectorAll('.js-laps > li').forEach(el => el.remove());
     } else return;
