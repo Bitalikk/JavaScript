@@ -766,11 +766,37 @@
 
 //  Дана строка из 6-ти цифр. Проверьте, что сумма первых трех цифр равняется сумме вторых трех цифр. Если это так - выведите 'да', в противном случае выведите 'нет'.
 
-const num = '754514';
-const first = Number(num[0]) + Number(num[1]) + Number(num[2]);
-const second = Number(num[num.length - 1]) + Number(num[num.length - 2]) + Number(num[num.length - 3]);
-if(first === second) {
-    console.log('Yes');
-} else {
-    console.log('No');
+// const num = '754514';
+// const first = Number(num[0]) + Number(num[1]) + Number(num[2]);
+// const second = Number(num[num.length - 1]) + Number(num[num.length - 2]) + Number(num[num.length - 3]);
+// if(first === second) {
+//     console.log('Yes');
+// } else {
+//     console.log('No');
+// }
+
+
+ //================== *plus task ============ 
+
+//  Создайте программу, которая выводит надбавку за стаж. Пользователь вводит стаж работы, а программа пишет ему надбавку.
+
+/*Стаж от	Стаж до	Надбавка
+0	3 лет	0%
+3 лет	10 лет	10%
+10 лет	20 лет	20%
+20 лет	выше	25%
+Учтите вариант ошибки – пользователь вводит отрицательное число.*/
+
+const ask =  Number.parseInt(prompt('Введите свой стаж'));
+
+if(ask >= 0 && ask < 3) {
+  console.log('Надбавка за стаж 0%');
+} else if(ask >= 3 && ask < 10) {
+  console.log('Надбавка за стаж 10%');
+} else if(ask >= 10 && ask < 20) {
+  console.log('Надбавка за стаж 20%');
+} else if(ask >= 20) {
+  console.log('Надбавка за стаж 25%');
+}else {
+  console.log('Некорректный ввод');
 }
