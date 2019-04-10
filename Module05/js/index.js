@@ -27,24 +27,26 @@
 // сделать стрелочную функцию, которая принимает (number) и умножает на 27.4
 // изменить значение в долларах через transfer(number)
 
-const numbers = [5, 16, 28, 37, 49, 56];
+// const numbers = [5, 16, 28, 37, 49, 56];
 
 
-const map = function(array, transfer) {
-    const numbersNew = [];
-    for(const el of array) {
-        // const elNew = el * 27.4;
-        const elNew = transfer(el);
-        console.log(elNew);
-        numbersNew.push(elNew);
-    }
-    return numbersNew;
-};
+// const map = function(array, transfer) {
+//     const numbersNew = [];
+//     for(const el of array) {
+//         // const elNew = el * 27.4;
+//         const elNew = transfer(el);
+//         console.log(elNew);
+//         numbersNew.push(elNew);
+//     }
+//     return numbersNew;
+// };
 
-// console.log(map(numbers));
+// // console.log(map(numbers));
 
-const arrow = (number) => number * 27.4;
+// const arrow = (number) => number * 27.4;
 
-map(numbers, arrow);
+// map(numbers, arrow);
 
-console.log(map(numbers, arrow))
+// console.log(map(numbers, arrow))
+
+

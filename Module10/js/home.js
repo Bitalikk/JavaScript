@@ -32,7 +32,17 @@ all.addEventListener('click', getInfo);
 
 function getInfo(evt) {
   evt.preventDefault();
-  if(evt.target === all) getAllUsers();
+  if(evt.target === all) {
+    fetch('https://test-users-api.herokuapp.com/users/')
+    .then(response => {
+      if(response.ok) return response.json();
+
+      throw new Error('error');
+    })
+    .then(data => {
+      data.data.forEach(el => console.log(el));
+    })
+  }
 }
 
 
