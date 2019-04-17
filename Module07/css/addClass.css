@@ -1,0 +1,25 @@
+/* .container {
+    width: 200px;
+    margin: auto;
+} */
+
+.gallery {
+    width: 400px;
+    margin: auto;
+    text-align: center;
+}
+img {
+    width: 100%;
+    /* display: none; */
+    opacity: 0;
+    transition: opacity 1s;
+    position: absolute;
+    left: 0;
+}
+.images {
+    position: relative;
+}
+.showed {
+    opacity: 1;
+    /* display: block; */
+}

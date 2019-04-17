@@ -23,26 +23,21 @@
 */
 
 const input = document.querySelector("input");
+const form = document.querySelector('.search-form');
 const all = document.querySelector(".js-get-all");
+const user = document.querySelector('.js-get-user');
 const result = document.querySelector(".result");
-all.addEventListener('click', getInfo);
+const clear = document.querySelector('.js-clear');
+form.addEventListener('click', getInfo);
 
 // https://test-users-api.herokuapp.com/users/
 
 
 function getInfo(evt) {
   evt.preventDefault();
-  if(evt.target === all) {
-    fetch('https://test-users-api.herokuapp.com/users/')
-    .then(response => {
-      if(response.ok) return response.json();
-
-      throw new Error('error');
-    })
-    .then(data => {
-      data.data.forEach(el => console.log(el));
-    })
-  }
+  if(evt.target === all) getAllUsers();
+  if(evt.target === user) getUserById(input.value);
+  if(evt.target === clear) clearList();
 }
 
 
@@ -64,5 +59,23 @@ function getAllUsers() {
 }
 
 function getUserById(id) {
+  const API_URL = `https://test-users-api.herokuapp.com/users/${id}`;
+  fetch(API_URL)
+  .then(response => {
+    if(response.ok) return response.json();
+    
+    throw new Error('error');
+  })
+  .then(arr => {
+    return arr.data;
+  })
+  .then(data => {
+    const user = `<ul><li>Name: ${data.name}</li><li>id: ${data.id}</li><li>Age: ${data.age}</li></ul>`;
+    result.insertAdjacentHTML('afterbegin', user);
+  })
+  .catch(err => console.error('err'));
+}
 
+function clearList() {
+  result.querySelectorAll('ul').forEach(el => el.remove());
 }
