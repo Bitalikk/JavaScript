@@ -1,4 +1,3 @@
-/* Task 01 */
 /* body {
     display: flex;
     justify-content: center;
@@ -38,7 +37,6 @@
   .button:active {
     box-shadow: 0 2px 3px rgba(0, 0, 0, 0.1), 0 4px 8px rgba(0, 0, 0, 0.3);
   } */
-
 
 
   /* Task 02 */
@@ -84,7 +82,6 @@
     font-size: 64px;
     font-weight: 400;
   } */
-
 
   /* Task 03 */
 
@@ -159,6 +156,8 @@
 
 
   /* Task 05 */
+
+
   /* img {
     display: block;
     max-width: 100%;
@@ -178,6 +177,7 @@
     box-shadow: 0px 1px 5px 0px rgba(0, 0, 0, 0.2),
       0px 2px 2px 0px rgba(0, 0, 0, 0.14), 0px 3px 1px -2px rgba(0, 0, 0, 0.12);
   } */
+
 
 
   /* Task 06 */
@@ -218,8 +218,7 @@
 
   /* Task 07 */
 
-
-  body {
+  /* body {
     min-height: 100vh;
     display: flex;
     align-items: center;
@@ -247,7 +246,7 @@
   
   .input.invalid {
     outline: 3px solid #F44336;
-  }
+  } */
 
 
   /* Task 08 */
@@ -439,6 +438,7 @@
     font-family: inherit;
   } */
 
+
   /* Task 10 */
 
   /* * {
@@ -472,5 +472,33 @@
   .menu-link.active {
     background-color: #ff4081;
     color: #ffffff;
+  } */
+
+
+  /* Homework */
+
+  .image-gallery {
+    width: 100%;
   }
-   */
+  .fullview {
+    width: 80%;
+    margin: auto;
+  }
+  img {
+    width: 100%;
+    display: block;
+  }
+  .preview {
+    width: 80%;
+    margin: auto;
+    list-style: none;
+  }
+  li {
+    width: 320px;
+    display: inline-block;
+    margin: 10px;
+    text-align: center;
+  }
+  .active {
+    border: 3px solid red;
+  }

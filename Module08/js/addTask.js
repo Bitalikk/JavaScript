@@ -126,34 +126,34 @@
     если неправильное - красным. Для добавления стилей, на вкладке CSS есть стили valid и invalid
 */
 
-// const list = document.querySelector('.input-list');
-// const inputs = document.querySelectorAll('.input');
-// list.addEventListener('focusout', getValidation);
+const list = document.querySelector('.input-list');
+const inputs = document.querySelectorAll('.input');
+list.addEventListener('focusout', getValidation);
 
-// function getValidation() {
-//   const input = event.target;
-//   const len = input.getAttribute('data-length');
-//   if(input.value.length > 0) {
-//     if(input.value.length === Number(len)) {
-//       if(input.classList.contains('invalid')) {
-//         input.classList.remove('invalid');
-//       }
-//       input.classList.add('valid');
-//     } else {
-//       if(input.classList.contains('valid')) {
-//         input.classList.remove('valid');
-//       }
-//       input.classList.add('invalid');
-//     }
-//   }
+function getValidation() {
+  const input = event.target;
+  const len = input.getAttribute('data-length');
+  if(input.value.length > 0) {
+    if(input.value.length === Number(len)) {
+      if(input.classList.contains('invalid')) {
+        input.classList.remove('invalid');
+      }
+      input.classList.add('valid');
+    } else {
+      if(input.classList.contains('valid')) {
+        input.classList.remove('valid');
+      }
+      input.classList.add('invalid');
+    }
+  }
 
-//   if(input.value.length === 0) {
-//     const hasValid = input.classList.contains('valid');
-//     const hasInvalid = input.classList.contains('invalid');
-//     hasValid ? input.classList.remove('valid') : null;
-//     hasInvalid ? input.classList.remove('invalid') : null;
-//   }
-// }
+  if(input.value.length === 0) {
+    const hasValid = input.classList.contains('valid');
+    const hasInvalid = input.classList.contains('invalid');
+    hasValid ? input.classList.remove('valid') : null;
+    hasInvalid ? input.classList.remove('invalid') : null;
+  }
+}
 
 //==============Task 08======================================
 
@@ -232,18 +232,18 @@
   При клике по ссылкам не должна перезагружаться страница!
 */
 
-const menu = document.querySelector('.js-menu');
-const links = menu.querySelectorAll('.menu-link');
-menu.addEventListener('click', getActive);
+// const menu = document.querySelector('.js-menu');
+// const links = menu.querySelectorAll('.menu-link');
+// menu.addEventListener('click', getActive);
 
-function getActive(event) {
-  event.preventDefault();
-  if(event.target.nodeName !== 'A') return;
-  links.forEach(link => {
-    if(link !== event.target) {
-      link.classList.remove('active');
-    } else {
-    event.target.classList.add('active');
-  }
-  });
-}
+// function getActive(event) {
+//   event.preventDefault();
+//   if(event.target.nodeName !== 'A') return;
+//   links.forEach(link => {
+//     if(link !== event.target) {
+//       link.classList.remove('active');
+//     } else {
+//     event.target.classList.add('active');
+//   }
+//   });
+// }
