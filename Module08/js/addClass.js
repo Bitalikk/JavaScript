@@ -411,3 +411,5 @@ const gall = new Gallery({
   defaultActiveItem: 5
 });
 
+
+console.log(~300);
